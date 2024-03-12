@@ -1,0 +1,33 @@
+{
+    "name": "PSTAT 134/234: Statistical Data Science",
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
+
+    "workspaceMount": "source=${localWorkspaceFolder},target=/home/jovyan/work,type=bind",
+    "workspaceFolder": "/home/jovyan/work",
+
+    "forwardPorts": [8888],
+    "overrideCommand": false,
+
+    "runArgs": [
+        "--env=DOCKER_STACKS_JUPYTER_CMD=lab"
+    ],
+
+    "customizations": {
+
+        "vscode": {
+            "settings": {
+                "python.defaultInterpreterPath": "/opt/conda/bin/python"
+            },
+            "extensions": [
+                "ms-python.python",
+                "ms-toolsai.jupyter",
+                "ms-toolsai.jupyter-keymap",
+                "quarto.quarto",
+                "analytic-signal.preview-pdf"
+            ]
+        }
+
+    }
+}
